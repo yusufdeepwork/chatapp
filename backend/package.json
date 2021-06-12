@@ -1,0 +1,24 @@
+{
+  "name": "chatapp-server",
+  "version": "1.0.0",
+  "description": "chat app socket.io server",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chat",
+    "app",
+    "socket.io"
+  ],
+  "author": "yusufdeepwork",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
