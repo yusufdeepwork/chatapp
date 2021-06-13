@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import MessagesHeader from './MessagesHeader';
-// import MessagesFooter from './MessagesFooter';
-// import Messages from './Messages';
+import MessagingHeader from './MessagingHeader';
+import MessagingFooter from './MessagingFooter';
+import Messages from './Messages';
 
 const MessagingBox = () => (
   <MessagingBoxContainer>
-    <MessagesHeader />
-    {/* <Messages /> */}
-    {/* <MessagesFooter /> */}
+    <MessagingHeader
+      userName="Ramazandadf"
+      userImage="https://i4.hurimg.com/i/hurriyet/75/750x0/5efd6baa45d2a04ed8f57254"
+    />
+    <Messages />
+    <MessagingFooter />
   </MessagingBoxContainer>
 );
 export default MessagingBox;

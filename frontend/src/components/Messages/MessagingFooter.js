@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import { FaTelegram } from 'react-icons/fa';
+import { MessagesContext } from '../../context/MessagesContext';
 
-const MessagingFooter = () => (
-  <FooterContainer>
-    <MessageInput placeholder="type message here" />
-    <SendIcon size={50} />
-  </FooterContainer>
-);
+const MessagingFooter = () => {
+  const { setAllMessages, allMessages } = useContext(MessagesContext);
+  const [messageContent, setMessageContent] = useState();
+
+  const handleEnter = (e) => (e.key === 'Enter' ? setAllMessages([...allMessages, { messageContent }]) : null);
+  return (
+    <FooterContainer>
+      <MessageInput
+        onChange={(event) => setMessageContent(event.target.value)}
+        onKeyDown={handleEnter}
+        placeholder="type message here"
+      />
+      <SendIcon size={50} onClick={() => setAllMessages([...allMessages, { messageContent }])} />
+    </FooterContainer>
+  );
+};
 export default MessagingFooter;
 
 const FooterContainer = styled.div`
