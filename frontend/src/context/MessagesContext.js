@@ -1,23 +1,24 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
+import io from 'socket.io-client';
 
 export const MessagesContext = createContext(undefined, undefined);
-
+const socket = io.connect('http://localhost:5555');
 const ChatApp = ({ children }) => {
-  // const messageContext = {
-  //   userId: null,
-  //   userName: null,
-  //   userProfilePhoto: '',
-  //   messageContent: '',
-  // };
-  const [allMessages, setAllMessages] = useState([]);
+  const [allUserMessages, setAllUserMessages] = useState([]);
   const [users, setUsers] = useState([]);
-  const [liveUser, setLiveUser] = useState({ isLogin: false, loginUserName: '', loginUserNameId: '' });
+  const [liveUser, setLiveUser] = useState({ isLogin: false, loginUserName: '', loginUserId: '' });
   // eslint-disable-next-line no-console
-  console.log(users, 'all messages');
+  console.log(allUserMessages, 'all messages');
+
+  useEffect(() => {
+    socket.on('message', ({ messageContent, id, name }) => {
+      setAllUserMessages((prevState) => [...prevState, { messageContent, id, name }]);
+    });
+  }, []);
 
   return (
     <MessagesContext.Provider value={{
-      allMessages, setAllMessages, liveUser, setLiveUser, setUsers, users,
+      allUserMessages, setAllUserMessages, liveUser, setLiveUser, setUsers, users,
     }}
     >
       {children}

@@ -6,10 +6,7 @@ import Messages from './Messages';
 
 const MessagingBox = () => (
   <MessagingBoxContainer>
-    <MessagingHeader
-      userName="Ramazandadf"
-      userImage="https://i4.hurimg.com/i/hurriyet/75/750x0/5efd6baa45d2a04ed8f57254"
-    />
+    <MessagingHeader />
     <Messages />
     <MessagingFooter />
   </MessagingBoxContainer>
@@ -25,4 +22,8 @@ const MessagingBoxContainer = styled.div`
   height: 100%;
   width: 70%;
   border-radius:  0 2rem 2rem 0;
+  @media screen and (max-width: 550px){
+    width: 70vw;
+    border-radius: 2rem;
+  }
 `;
