@@ -5,7 +5,7 @@ const socketIO = require('socket.io')(http,{
         origins: ['http://localhost:3000']
     }
 });
-const port =  5555;
+const port = process.env.PORT || 5555;
 
 socketIO.on('connection', socket => {
     socket.on('message', (props) => {
