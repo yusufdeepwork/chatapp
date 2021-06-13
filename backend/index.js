@@ -8,9 +8,12 @@ const socketIO = require('socket.io')(http,{
 const port =  5555;
 
 socketIO.on('connection', socket => {
-    socket.on('message', ({context, name}) => {
-        console.log({context,name},"data")
-        socketIO.emit('message',{context, name})
+    socket.on('message', (props) => {
+        socketIO.emit('message',props);
+    })
+    socket.on('online', (props) => {
+        socketIO.emit('online',props);
+        console.log(props,'online bağlandı');
     })
 })
 

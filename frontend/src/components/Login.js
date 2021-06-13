@@ -3,14 +3,18 @@ import styled from 'styled-components';
 import { ToastContainer, toast } from 'react-toastify';
 import { MessagesContext } from '../context/MessagesContext';
 import 'react-toastify/dist/ReactToastify.css';
+// eslint-disable-next-line import/order
+import io from 'socket.io-client';
+
+const socket = io.connect('http://localhost:5555');
 
 const Login = () => {
-  const { setLiveUser, setUsers, liveUser } = useContext(MessagesContext);
+  const { setLiveUser } = useContext(MessagesContext);
   const [newUserName, setNewUserName] = useState();
   const handleEnter = (event) => (event.key === 'Enter' ? addLiveUser() : null);
 
   const createLoginUser = () => {
-    setUsers((prevUsers) => [...prevUsers, { userName: liveUser.loginUserId }]);
+    socket.emit('online', { userName: newUserName });
   };
   const addLiveUser = () => {
     if (newUserName) {

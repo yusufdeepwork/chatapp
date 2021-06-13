@@ -16,6 +16,12 @@ const ChatApp = ({ children }) => {
     });
   }, []);
 
+  useEffect(() => {
+    socket.on('online', ({ userName }) => {
+      setUsers((prevUsers) => [...prevUsers, { userName }]);
+    });
+  }, []);
+
   return (
     <MessagesContext.Provider value={{
       allUserMessages, setAllUserMessages, liveUser, setLiveUser, setUsers, users,
