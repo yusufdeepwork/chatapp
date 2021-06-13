@@ -12,4 +12,7 @@ const ChatsBoxContainer = styled.div`
   width: 30%;
   border-radius:  2rem 0 0 2rem;
   border-right: #cecece 1px solid;
+  @media screen and (max-width: 550px){
+    display: none;
+  }
 `;
