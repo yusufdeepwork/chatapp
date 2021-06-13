@@ -1,4 +1,4 @@
-import ChatsBox from './ChatsBox';
-import MessagingBox from './MessagingBox';
+import ChatsBox from './ChatsBox/ChatsBox';
+import MessagesBox from './Messages/MessagesBox';
 
-export { ChatsBox, MessagingBox };
+export { ChatsBox, MessagesBox };
