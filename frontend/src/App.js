@@ -10,7 +10,7 @@ function App() {
   const [message, setMessage] = useState({ context: '', name: '' });
   const [chat, setChat] = useState([]);
 
-  const { isLogin } = useContext(MessagesContext);
+  const { liveUser } = useContext(MessagesContext);
 
   useEffect(() => {
     socket.on('message', ({ context, name }) => {
@@ -33,7 +33,7 @@ function App() {
     <ChatAppBody>
       <ChatAppContainer>
         <ChatsBox />
-        {isLogin ? <MessagingBox /> : <Login />}
+        {liveUser.isLogin ? <MessagingBox /> : <Login />}
       </ChatAppContainer>
     </ChatAppBody>
   );

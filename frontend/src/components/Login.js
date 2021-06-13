@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { MessagesContext } from '../context/MessagesContext';
 
 const Login = () => {
-  const { setIsLogin, setUsers } = useContext(MessagesContext);
+  const { setLiveUser, setUsers } = useContext(MessagesContext);
   const [newUserName, setNewUserName] = useState('');
   const createUser = () => {
     // eslint-disable-next-line max-len
@@ -18,7 +18,7 @@ const Login = () => {
       />
       {/* eslint-disable-next-line react/button-has-type */}
       <button onClick={() => {
-        setIsLogin(true);
+        setLiveUser((prevState) => ({ ...prevState, isLogin: true }));
         createUser();
       }}
       >

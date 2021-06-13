@@ -11,13 +11,13 @@ const ChatApp = ({ children }) => {
   // };
   const [allMessages, setAllMessages] = useState([]);
   const [users, setUsers] = useState([]);
-  const [isLogin, setIsLogin] = useState(false);
+  const [liveUser, setLiveUser] = useState({ isLogin: false, loginUserName: '', loginUserNameId: '' });
   // eslint-disable-next-line no-console
   console.log(users, 'all messages');
 
   return (
     <MessagesContext.Provider value={{
-      allMessages, setAllMessages, isLogin, setIsLogin, setUsers, users,
+      allMessages, setAllMessages, liveUser, setLiveUser, setUsers, users,
     }}
     >
       {children}
