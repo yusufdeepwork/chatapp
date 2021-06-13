@@ -48,10 +48,10 @@ const ChatAppBody = styled.div`
 `;
 const ChatAppContainer = styled.div`
   display: flex;
-  height: 70%;
-  width: 85%;
+  height: 80%;
+  width: 70%;
   border-radius: 2rem;
   background-color: #f2f1f4;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 `;
