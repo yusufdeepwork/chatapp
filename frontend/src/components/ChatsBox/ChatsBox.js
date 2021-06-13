@@ -29,13 +29,17 @@ const ChatsBoxContainer = styled.div`
   }
 `;
 const Header = styled.div`
-  height: 10%;
+  height: 11.8%;
   font-size: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-bottom: #cecece 1px solid;
   width: 100%;
+  
+  @media screen and (max-width: 900px){
+    font-size: 20px;
+  }
 `;
 const OnlineUsers = styled.div`
   display: flex;
@@ -49,7 +53,6 @@ const OnlineUser = styled.div`
     display: flex;
   text-align: center;
   height: 4rem;
-  padding: 1rem;
   border-bottom: #cecece 1px solid;
   width: 100%;
   font-size: 30px;

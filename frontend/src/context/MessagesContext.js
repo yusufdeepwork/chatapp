@@ -7,8 +7,6 @@ const ChatApp = ({ children }) => {
   const [allUserMessages, setAllUserMessages] = useState([]);
   const [users, setUsers] = useState([]);
   const [liveUser, setLiveUser] = useState({ isLogin: false, loginUserName: '', loginUserId: '' });
-  // eslint-disable-next-line no-console
-  console.log(allUserMessages, 'all messages');
 
   useEffect(() => {
     socket.on('message', ({ messageContent, id, name }) => {

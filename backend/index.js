@@ -13,7 +13,6 @@ socketIO.on('connection', socket => {
     })
     socket.on('online', (props) => {
         socketIO.emit('online',props);
-        console.log(props,'online bağlandı');
     })
 })
 
