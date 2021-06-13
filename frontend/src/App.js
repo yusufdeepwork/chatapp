@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import io from 'socket.io-client';
 import styled from 'styled-components';
-import { ChatsBox, MessagingBox } from './components';
+import { ChatsBox, Login, MessagingBox } from './components';
+import { MessagesContext } from './context/MessagesContext';
 
 const socket = io.connect('http://localhost:5555');
 
 function App() {
   const [message, setMessage] = useState({ context: '', name: '' });
   const [chat, setChat] = useState([]);
+
+  const { isLogin } = useContext(MessagesContext);
 
   useEffect(() => {
     socket.on('message', ({ context, name }) => {
@@ -30,7 +33,7 @@ function App() {
     <ChatAppBody>
       <ChatAppContainer>
         <ChatsBox />
-        <MessagingBox />
+        {isLogin ? <MessagingBox /> : <Login />}
       </ChatAppContainer>
     </ChatAppBody>
   );
