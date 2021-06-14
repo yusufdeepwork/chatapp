@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 // eslint-disable-next-line import/order
 import io from 'socket.io-client';
 
-const socket = io.connect('http://localhost:5555');
+const socket = io.connect('https://awesome-chatapp-socketio.herokuapp.com');
 
 const Login = () => {
   const { setLiveUser } = useContext(MessagesContext);

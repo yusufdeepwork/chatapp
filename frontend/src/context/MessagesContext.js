@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from 'react';
 import io from 'socket.io-client';
 
 export const MessagesContext = createContext(undefined, undefined);
-const socket = io.connect('http://localhost:5555');
+const socket = io.connect('https://awesome-chatapp-socketio.herokuapp.com');
 const ChatApp = ({ children }) => {
   const [allUserMessages, setAllUserMessages] = useState([]);
   const [users, setUsers] = useState([]);

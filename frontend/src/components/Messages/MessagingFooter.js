@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { MessagesContext } from '../../context/MessagesContext';
 import 'react-toastify/dist/ReactToastify.css';
 
-const socket = io.connect('http://localhost:5555');
+const socket = io.connect('https://awesome-chatapp-socketio.herokuapp.com');
 
 const MessagingFooter = () => {
   const { liveUser } = useContext(MessagesContext);
