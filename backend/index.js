@@ -1,7 +1,9 @@
 const app = require('express')();
 const http = require('http').createServer(app);
 const cors = require('cors');
-app.use(cors);
+const router = require('./router');
+
+
 const socketIO = require('socket.io')(http,{
     cors: {
         origins: ['http://localhost:3000']
@@ -17,5 +19,12 @@ socketIO.on('connection', socket => {
         socketIO.emit('online',props);
     })
 })
+app.use(cors());
+app.use(router);
+
+
+
+app.use(router);
 
 http.listen(port, ()=> console.log("Chat app is running"));
+
