@@ -2,7 +2,7 @@
 You can talk with  online users,
 see all online users & enjoy chatting.
 
-#Preview
+# Preview
 ## Website Preview
 ![Image of chat](webSitePreview.png)
 ## Mobile Preview
