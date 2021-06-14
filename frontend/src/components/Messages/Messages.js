@@ -46,7 +46,7 @@ const MessagesContainer = styled.div`
 `;
 const MessageBox = styled.text`
   font-family:  'Quicksand', sans-serif;
-  height: 4px;
+  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;

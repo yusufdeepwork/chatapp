@@ -39,4 +39,9 @@ const ChatAppContainer = styled.div`
   @media screen and (max-width: 550px){
     justify-content: center;
   }
+
+  @media screen and (max-width: 750px){  
+    height: 95%;
+    width: 80%;
+  }
 `;

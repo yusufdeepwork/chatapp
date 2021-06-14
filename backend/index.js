@@ -15,8 +15,8 @@ socketIO.on('connection', socket => {
     socket.on('message', (props) => {
         socketIO.emit('message',props);
     })
-    socket.on('online', (props) => {
-        socketIO.emit('online',props);
+    socket.on('online', ({userName}) => {
+        socketIO.emit('online',{userName});
     })
 })
 app.use(cors());

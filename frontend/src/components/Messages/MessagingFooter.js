@@ -40,7 +40,7 @@ const MessagingFooter = () => {
         placeholder="type message here"
       />
       <SendIcon
-        size={40}
+        size={45}
         onClick={() => sendMessage()}
       />
       <ToastContainer
@@ -64,7 +64,7 @@ const FooterContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10%;
+  height: 6rem;
   width: 100%;
   border-radius:  0 0 2rem 0;
   border-top: #cecece 1px solid;
@@ -73,7 +73,7 @@ const FooterContainer = styled.div`
 const MessageInput = styled.input`
   font-family:  'Quicksand', sans-serif;
   padding: 0 1rem;
-  width: 70%;
+  width: 60%;
   font-size: 20px;
   height: 3rem;
   outline: none;
@@ -81,9 +81,10 @@ const MessageInput = styled.input`
   border-radius: 0.5rem;
   
   @media screen and (max-width: 550px){
-    border-radius: 3rem;
     margin-left: 10px;
     padding: 0 0.5rem;
+    font-size: 15px;
+    height: 2rem;
   }
 `;
 const SendIcon = styled(FaTelegram)`

@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { MessagesContext } from '../../context/MessagesContext';
 
 const ChatsBox = () => {
-  const { users } = useContext(MessagesContext);
+  const { onlineUsers } = useContext(MessagesContext);
   return (
     <ChatsBoxContainer>
       <Header>Online Users</Header>
-      <OnlineUsers>{users.map((user) => <OnlineUser>{` 👋 ${user.userName} `}</OnlineUser>)}</OnlineUsers>
+      <OnlineUsers>{onlineUsers.map((user) => <OnlineUser>{` 👋 ${user.userName} `}</OnlineUser>)}</OnlineUsers>
     </ChatsBoxContainer>
   );
 };
@@ -26,10 +26,14 @@ const ChatsBoxContainer = styled.div`
 
   @media screen and (max-width: 550px){
     display: none;
+    font-size: 10px;
+  }
+  @media screen and (max-width: 700px){
+    font-size: 10px;
   }
 `;
 const Header = styled.div`
-  height: 11.8%;
+  height: 8.9rem;
   font-size: 30px;
   display: flex;
   justify-content: center;
@@ -47,20 +51,24 @@ const OnlineUsers = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  overflow: auto;
 `;
 const OnlineUser = styled.div`
-    display: flex;
+  border-bottom: #cecece 1px solid;
+  display: flex;
   text-align: center;
   height: 4rem;
-  border-bottom: #cecece 1px solid;
   width: 100%;
   font-size: 30px;
   min-height: 4rem;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start ;
+  padding-left:10px;
   
   :hover{
-    background-color: lightcyan;
+    color: plum;
+  }
+
+  @media screen and (max-width: 1000px){
+    font-size: 20px;
   }
 `;
