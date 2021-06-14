@@ -12,7 +12,7 @@ see all online users & enjoy chatting.
 ```React, Styled-Components, Nodejs, Express, Socketio```
 ### Deployment
 ```backend : heroku```
-```backend : netlify```
+```frontend : netlify```
 
 ### Thanks
 I was inspired: https://dribbble.com/shots/12765133-Chat-Dashboard-Amphi
